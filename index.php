@@ -458,7 +458,7 @@ if(!isset($argc))
     if(array_key_exists('debug',$GLOBALS['settings']) && $GLOBALS['settings']['debug'] == true)
         $GLOBALS['debug'] = true;
         
-    preg_match("~\.~",$require_file_uri,$rets);
+    preg_match("~\.cdn~",$require_file_uri,$rets);
     
     if(sizeof($rets) > 0)
     {
