@@ -384,6 +384,14 @@ if(!isset($argc))
     $require_file_uri=substr($_SERVER['REQUEST_URI'],strlen($doc_root));
 
     $type="application/octet-stream";
+    
+     preg_match("~\.cdn~",$require_file_uri,$rets);
+    
+    if(sizeof($rets) > 0)
+    {
+            header("HTTP/1.1 403 Forbidden");
+            exit(0);
+    }
 
     if($require_file_uri == "/" || $require_file_uri == "index.php" || $require_file_uri == '')
     {
@@ -457,14 +465,7 @@ if(!isset($argc))
 
     if(array_key_exists('debug',$GLOBALS['settings']) && $GLOBALS['settings']['debug'] == true)
         $GLOBALS['debug'] = true;
-        
-    preg_match("~\.cdn~",$require_file_uri,$rets);
-    
-    if(sizeof($rets) > 0)
-    {
-            header("HTTP/1.1 404 Not Found");
-            exit(0);
-    }
+       
     
     echo $require_file_uri;
     if(!is_daemon_running())
