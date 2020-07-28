@@ -24,6 +24,14 @@ RewriteCond %{REQUEST_FILENAME} !test.php
 
 RewriteRule ^ index.php [QSA,L]
 
+然后，新建.gitignore文件，内容为你不想被缓存的文件：
+.*
+*.php
+*.asp
+*.phar
+.cdn/
+index.php
+
 最后，在www用户打开php index.php daemon启动守护进程（用于监视资源文件的更新及完成于GitHub的自动同步）。若发现没有效果/网站出错，请查看.cdn/debug.log查找出错原因。
 
 
