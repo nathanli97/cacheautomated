@@ -36,6 +36,7 @@ index.php
 ```
 最后，在www用户打开php index.php daemon启动守护进程（用于监视资源文件的更新及完成于GitHub的自动同步）。若发现没有效果/网站出错，请查看.cdn/debug.log查找出错原因。
 
+(建议写到systemd service或用screen，扔到后台运行，注意：请以www或www-data用户运行)
 
 加速效果演示网址：[七猫论坛](https://qimao.me)
 
