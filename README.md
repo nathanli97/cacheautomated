@@ -15,7 +15,7 @@ PHP环境：必须带有pcntl扩展，并且支持proc_*系列函数
 在你的index.php同目录新建一个.htaccess(以Apache2服务器为例），同时确保你的服务器已经打开了rewrite模块支持，
 
 .htaccess的内容为（不包括*号）
-
+```
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !index.php
@@ -23,15 +23,17 @@ RewriteCond %{REQUEST_FILENAME} !index.php
 RewriteCond %{REQUEST_FILENAME} !test.php
 
 RewriteRule ^ index.php [QSA,L]
+```
 
 然后，新建.gitignore文件，内容为你不想被缓存的文件：
+```
 .*
 *.php
 *.asp
 *.phar
 .cdn/
 index.php
-
+```
 最后，在www用户打开php index.php daemon启动守护进程（用于监视资源文件的更新及完成于GitHub的自动同步）。若发现没有效果/网站出错，请查看.cdn/debug.log查找出错原因。
 
 
