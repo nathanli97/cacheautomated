@@ -467,7 +467,6 @@ if(!isset($argc))
         $GLOBALS['debug'] = true;
        
     
-    echo $require_file_uri;
     if(!is_daemon_running())
     {
         logger('daemon are not running.Trying to startup daemon','WARN','Web');
