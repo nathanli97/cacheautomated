@@ -38,7 +38,7 @@ index.php
 
 (建议写到systemd service或用screen，扔到后台运行，注意：请以www或www-data用户运行)
 
-加速效果演示网址：[七猫论坛](https://qimao.me)
+加速效果演示网址：~~[七猫论坛]~~  (此论坛因经营不善已倒闭)
 
 加速前：
 
